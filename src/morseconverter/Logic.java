@@ -52,12 +52,12 @@ public class Logic {
             if (input.contains(".") || input.contains("-")) {   //Om det är Morsekod
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
-                    output = output.concat(engToMor.getOrDefault(morseSnippet, "-1"));
+                    output = output.concat(morToEng.getOrDefault(morseSnippet, " Fel 1! "));
                 }
             } else {    //Annars är det vanlig text
                 char[] letters = this.input.toCharArray();
                 for (char letter : letters) {
-                    output = output.concat(engToMor.getOrDefault(String.valueOf(letter), "-1")+ " ");
+                    output = output.concat(engToMor.getOrDefault(String.valueOf(letter), " Fel 2! "));
                 }
             }
 
