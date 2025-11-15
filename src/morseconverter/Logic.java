@@ -37,7 +37,6 @@ public class Logic {
         engToMor.put("Z", "--..");
         engToMor.put(" ", " ");
 
-        // skapa morse → engelska
         for (String key : engToMor.keySet()) {
             morToEng.put(engToMor.get(key), key);
         }
@@ -49,12 +48,12 @@ public class Logic {
             output = "";
             this.input = input.toUpperCase();
 
-            if (input.contains(".") || input.contains("-")) {   //Om det är Morsekod
+            if (input.contains(".") || input.contains("-")) {
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
                     output = output.concat(morToEng.getOrDefault(morseSnippet, " Fel 1! "));
                 }
-            } else {    //Annars är det vanlig text
+            } else {
                 char[] letters = this.input.toCharArray();
                 for (char letter : letters) {
                     output = output.concat(engToMor.getOrDefault(String.valueOf(letter), " Fel 2! "));
