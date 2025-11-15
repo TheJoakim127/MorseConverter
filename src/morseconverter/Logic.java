@@ -42,7 +42,6 @@ public class Logic {
         }
     }
 
- //test
     public String convert(String input) {
         try {
             output = "";
