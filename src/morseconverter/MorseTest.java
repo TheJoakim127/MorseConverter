@@ -25,18 +25,24 @@ public class MorseTest {
     }
 
     @Test
-    public void convertTofel1() {
+    public void convertWithNonexistingMorse() {
         Logic converter = new Logic();
         assertEquals("Fel 1!", converter.convert("......."));
     }
+
     @Test
-    public void convertTofel2() {
+    public void convertWithNothingWriten() {
+        Logic converter = new Logic();
+        assertEquals("", converter.convert(" "));
+    }
+    @Test
+    public void convertWithSwedishLetters() {
         Logic converter = new Logic();
         assertEquals("Fel 2!", converter.convert("å"));
     }
 
     @Test
-    public void convertTofel3() {
+    public void convertWithSymboles() {
         Logic converter = new Logic();
         assertEquals("Fel 2!  Fel 2!", converter.convert("<^"));
     }
